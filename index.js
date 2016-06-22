@@ -4,18 +4,9 @@ var graphqlHTTP = require('express-graphql');
 var express = require('express');
 
 // Import the data you created above
+var app = express();
 var data = require('./data.json');
 
-// Define the User type with two string fields: `id` and `name`.
-// The type of User is GraphQLObjectType, which has child fields
-// with their own types (in this case, GraphQLString).
-var userType = new graphql.GraphQLObjectType({
-  name: 'User',
-  fields: {
-    id: { type: graphql.GraphQLString },
-    name: { type: graphql.GraphQLString },
-  }
-});
 
 // Define the schema with one top-level field, `user`, that
 // takes an `id` argument and returns the User with that ID.
@@ -45,7 +36,13 @@ var schema = new graphql.GraphQLSchema({
 
 var port = process.env.PORT || 3000;
 
-express()
+
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
+
+
+app
   .use('/graphql', graphqlHTTP({ schema: schema, pretty: true }))
   .listen(port);
 
