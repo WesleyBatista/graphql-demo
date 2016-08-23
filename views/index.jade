@@ -3,3 +3,11 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  div(ng-controller="MainController as main")
+    ul
+        li(ng-repeat="item in items")
+            strong {{item.key}}: 
+            span {{item.name}}
+            hr
+    div(ui-grid="gridConfig" ui-grid-pagination class="myGrid")
