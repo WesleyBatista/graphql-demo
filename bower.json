@@ -1,0 +1,27 @@
+{
+  "name": "graphql-demo",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Wesley Batista <wesleybatistasantos@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/WesleyBatista/graphql-demo",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-grid": "^3.2.1",
+    "angular-touch": "^1.5.8",
+    "angular-animate": "^1.5.8"
+  },
+  "resolutions": {
+    "angular": "^1.5.8"
+  }
+}
